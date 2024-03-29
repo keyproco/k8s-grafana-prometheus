@@ -1,0 +1,16 @@
+{
+  "name": "virtuo-test-technique",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "prom-client": "^15.1.1",
+    "express-prom-bundle": "7.0.0"
+  }
+}

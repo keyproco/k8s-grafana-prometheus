@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "echo-webapp.fullname" . }}
+  labels:
+    {{- include "echo-webapp.labels" . | nindent 4 }}
+  annotations:
+    prometheus.io/scrape: "true"  
+spec:
+  sessionAffinity: ""
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port | default 80 }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "echo-webapp.selectorLabels" . | nindent 4 }}
